@@ -1,0 +1,27 @@
+﻿@model RegistrarManagement.Web.Models.ActionsMenu
+
+
+<div class="btn-group actionsMenu">
+    <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Actions menu">
+        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-right">
+        @foreach (var item in Model.Items)
+        {
+            <li>
+                @if (item.IsEnabled)
+                {
+                    <button type="button" class="btn btn-link @item.CssClass" data-modal-content-url="@item.Url">
+                        <i class="@item.IconCssClass" aria-hidden="true"></i> @item.Text
+                    </button>
+                }
+                else
+                {
+                    <button type="button" class="btn btn-link" style="color: silver;">
+                        <i class="@item.IconCssClass" aria-hidden="true"></i> @item.Text
+                    </button>
+                }
+            </li>
+        }
+    </ul>
+</div>

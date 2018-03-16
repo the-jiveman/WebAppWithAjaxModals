@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "People";
+}
+
+<h2>People</h2>
+<hr />
+
+<div id="peopleTableWrapper"></div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/appCustom/modules/people")
+
+    <script type="text/javascript">
+        'use strict';
+        $(function () {
+            App.PeopleIndex.Initialize();
+        });
+    </script>
+}
