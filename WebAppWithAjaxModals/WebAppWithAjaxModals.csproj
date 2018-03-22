@@ -129,6 +129,7 @@
     <Compile Include="Models\ActionsMenu.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\PeopleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -169,11 +170,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\People\Index.cshtml" />
-    <Content Include="Views\People\_PeopleList.cshtml" />
+    <Content Include="Views\People\_Index.cshtml" />
     <Content Include="Views\People\_Delete.cshtml" />
     <Content Include="Views\People\_Editor.cshtml" />
     <Content Include="Views\Shared\_Modal.cshtml" />
@@ -209,7 +207,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>61129</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

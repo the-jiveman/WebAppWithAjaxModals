@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using WebAppWithAjaxModals.Models;
+﻿using System.Web.Mvc;
+using WebAppWithAjaxModals.Repositories;
 
 namespace WebAppWithAjaxModals.Controllers
 {
     public class PeopleController : Controller
     {
+        // Normally, this would get injected into the constructor via a DI/IoC container
+        private readonly PeopleRepository _peopleRepository = new PeopleRepository();
+
+
         [HttpGet]
         public ActionResult Index()
         {
@@ -15,16 +18,8 @@ namespace WebAppWithAjaxModals.Controllers
         [HttpGet]
         public ActionResult AllPeople()
         {
-            var people = new List<Person>
-            {
-                new Person { Id = 1, FirstName = "John", LastName = "Smith", Email = "jsmith@company.com" },
-                new Person { Id = 2, FirstName = "Sally", LastName = "Johnson", Email = "sally@company.com" },
-                new Person { Id = 3, FirstName = "Tim", LastName = "Iverson", Email = "tim@company.com" },
-                new Person { Id = 4, FirstName = "The", LastName = "Dude", Email = "dude@company.com" },
-                new Person { Id = 5, FirstName = "Bruce", LastName = "Wayne", Email = "batman@company.com" },
-            };
-
-            return PartialView("_PeopleList", people);
+            var people = _peopleRepository.GetAllPeople();
+            return PartialView("_Index", people);
         }
     }
 }
