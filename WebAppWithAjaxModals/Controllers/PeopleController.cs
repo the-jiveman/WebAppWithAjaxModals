@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Linq;
+using System.Web.Mvc;
+using WebAppWithAjaxModals.Models;
 using WebAppWithAjaxModals.Repositories;
 
 namespace WebAppWithAjaxModals.Controllers
@@ -6,7 +9,7 @@ namespace WebAppWithAjaxModals.Controllers
     public class PeopleController : Controller
     {
         // Normally, this would get injected into the constructor via a DI/IoC container
-        private readonly PeopleRepository _peopleRepository = new PeopleRepository();
+        private readonly IPersonRepository _personRepository = new FakePersonRepository();
 
 
         [HttpGet]
@@ -18,8 +21,10 @@ namespace WebAppWithAjaxModals.Controllers
         [HttpGet]
         public ActionResult AllPeople()
         {
-            var people = _peopleRepository.GetAllPeople();
+            var people = _personRepository.GetAllPeople();
+
             return PartialView("_Index", people);
         }
+
     }
 }

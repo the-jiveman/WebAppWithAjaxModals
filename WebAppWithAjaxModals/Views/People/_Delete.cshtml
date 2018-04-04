@@ -1,19 +1,16 @@
-﻿@model RegistrarManagement.Web.Areas.Fees.ViewModels.FeeTermViewModel
+﻿@model WebAppWithAjaxModals.Models.Person
 
 @Html.AntiForgeryToken()
 @Html.ValidationSummary(true, "", new { @class = "alert alert-danger text-danger" })
 
 @Html.HiddenFor(model => model.Id)
 
+<p class="text-danger">You are about to delete the following record:</p>
+
 <p class="well small">
-    Term @Model.Name and all related data for the entire term
+    @Model.FirstName @Model.LastName
 </p>
 
-@Html.Partial("_FeeGenericDeleteWarning")
-
-<hr />
-
-<div class="form-inline form-group text-center">
-    <label for="TermNameConfirmation" class="control-label">To confirm, type the term code:</label>
-    <input type="text" id="TermNameConfirmation" name="TermNameConfirmation" class="form-control form-control-sm" />
-</div>
+<p class="alert alert-danger">
+    Are you sure you want to delete this record?
+</p>

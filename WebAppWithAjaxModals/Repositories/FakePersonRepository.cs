@@ -4,7 +4,7 @@ using WebAppWithAjaxModals.Models;
 
 namespace WebAppWithAjaxModals.Repositories
 {
-    public class PeopleRepository
+    public class FakePersonRepository : IPersonRepository
     {
         private static IEnumerable<Person> AllPeople => new List<Person>
         {

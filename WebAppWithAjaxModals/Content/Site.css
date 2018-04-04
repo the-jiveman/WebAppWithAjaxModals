@@ -3,8 +3,7 @@
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
+main {
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -14,6 +13,9 @@
 */
 .dl-horizontal dt {
     white-space: normal;
+}
+.dl-vertical dd {
+    margin-bottom: 10px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -23,26 +25,6 @@ textarea {
     max-width: 280px;
 }
 
-
-/* ---------------------------------------------------------------------------------- */
-
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-.dl-vertical dd {
-    margin-bottom: 10px;
-}
 
 .btn-group-xs .dropdown-menu > li > a,
 .btn-group-sm .dropdown-menu > li > a,
@@ -70,20 +52,12 @@ textarea {
     border: none;
 }
 
-    .btn-group .dropdown-menu > li > .btn-link:hover,
-    .btn-group.dropdown-menu > li > .btn-link:focus {
-        color: #262626;
-        text-decoration: none;
-        background-color: #f5f5f5;
-    }
-
-.small .checkbox-inline {
-    margin-right: 10px;
+.btn-group .dropdown-menu > li > .btn-link:hover,
+.btn-group.dropdown-menu > li > .btn-link:focus {
+    color: #262626;
+    text-decoration: none;
+    background-color: #f5f5f5;
 }
-
-    .small .checkbox-inline input {
-        top: 5px;
-    }
 
 .actionsMenu .dropdown-toggle {
     color: #7c7c7c;
@@ -96,124 +70,18 @@ textarea {
     background-color: transparent;
     text-decoration: none;
 }
-
-    .actionsMenu .dropdown-toggle:hover {
-        background-color: #b9d0e5;
-        color: #242424;
-        text-decoration: none;
-    }
-
+.actionsMenu .dropdown-toggle:hover {
+    background-color: #b9d0e5;
+    color: #242424;
+    text-decoration: none;
+}
 .actionsMenu.open .dropdown-toggle {
     background-color: #b9d0e5;
 }
 
 
-/* Set width on the form input elements */
-input,
-select {
-    max-width: 280px;
-}
-
-textarea {
-    max-width: 680px;
-}
-
-fieldset .form-group {
-    padding-left: 40px;
-}
-
-fieldset legend {
-    margin-bottom: 5px;
-}
-
-fieldset .form-group ul {
-    padding-left: 0;
-}
-
-.requiredFlag {
-    color: Red;
-}
-
-abbr[title] {
-    border-bottom-style: dotted;
-    text-decoration: none;
-}
-
-.requiredFlag abbr[title], .requiredFlag abbr[data-original-title] {
-    border-bottom: none;
-    text-decoration: none;
-}
-
-.form-control-xs {
-    min-width: 0;
-    width: 50px !important;
-}
-
-.form-control-sm {
-    min-width: 0;
-    width: 65px !important;
-}
-
-.form-control-med {
-    min-width: 0;
-    width: 100px !important;
-}
-
-.form-control-date {
-    min-width: 0;
-    width: 110px !important;
-}
-
-/* Hide validation summary wrapper box when there are no validation errors */
 .validation-summary-valid {
     display: none;
-}
-
-/* Customization to the UCSD Decorator Template in order to display custom SATS authentication */
-.layout-container-custom {
-    max-width: 1200px;
-    width: 98%;
-    margin: auto;
-    overflow: hidden;
-}
-/* Other customizations to the UCSD Decorator Template: */
-.main-section {
-    min-height: 400px;
-}
-
-main .layout-container {
-    overflow: visible;
-}
-
-/* Impersonation warning */
-.impersonationWarning {
-    background-color: #d02121;
-    color: #fff;
-    padding: 5px 20px;
-    font-size: 0.8em;
-    text-align: center;
-}
-
-    .impersonationWarning .exitButton {
-        margin-left: 20px;
-    }
-
-    .impersonationWarning .fa-exclamation-triangle {
-        font-size: 1.8em;
-        position: relative;
-        top: -1px;
-    }
-
-    .impersonationWarning a {
-        color: #fff;
-        font-size: 15px;
-    }
-
-
-/* Other */
-.pageTopActions {
-    text-align: right;
-    margin-top: 10px;
 }
 
 .loadingNotice {
@@ -221,48 +89,7 @@ main .layout-container {
     text-align: center;
     color: #666;
 }
-
-    .loadingNotice i.fa-spin {
-        margin-right: 10px;
-        font-size: 1.5em;
-    }
-
-.panel-heading {
-    position: relative;
+.loadingNotice i.fa-spin {
+    margin-right: 10px;
+    font-size: 1.5em;
 }
-
-    .panel-heading h2,
-    .panel-heading h3,
-    .panel-heading h4 {
-        font-size: 1em;
-        font-weight: bold;
-        padding: 2px 0;
-        margin: 0;
-    }
-
-.panel-primary .panel-heading h2,
-.panel-primary .panel-heading h3,
-.panel-primary .panel-heading h4 {
-    color: #fff;
-}
-
-.panel-heading .panel-heading-action {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-}
-
-
-/* Filterable table */
-.table-filterable-columns tfoot {
-    display: table-header-group;
-}
-
-    .table-filterable-columns tfoot td {
-        background-color: #efefef;
-    }
-
-        .table-filterable-columns tfoot td input.form-control,
-        .table-filterable-columns tfoot td select.form-control {
-            width: 100%;
-        }

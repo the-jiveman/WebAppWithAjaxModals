@@ -12,14 +12,30 @@
     <tbody>
         @foreach (var person in Model)
         {
-        <tr>
-            <td>@person.FirstName</td>
-            <td>@person.LastName</td>
-            <td>@person.Email</td>
-            <td class="text-right">
-                @*@Html.DisplayFor(model => person.ActionsMenu)*@
-            </td>
-        </tr>
+            <tr>
+                <td>@person.FirstName</td>
+                <td>@person.LastName</td>
+                <td>@person.Email</td>
+                <td class="text-right">
+                    <div class="btn-group actionsMenu">
+                        <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Actions menu">
+                            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <button type="button" class="btn btn-link">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                                </button>
+                            </li>
+                            <li class="text-danger">
+                                <button type="button" class="btn btn-link">
+                                    <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
