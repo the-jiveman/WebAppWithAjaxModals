@@ -16,15 +16,6 @@ App.Initialize = function (pathFromHostSiteRoot, environmentLabel) {
     App.ApplicationBasePath = pathFromHostSiteRoot;
     App.SetEnvironmentLabel(environmentLabel);
     App.Modal.Initialize();
-    App.RegisterGlobalEvents();
-};
-
-App.RegisterGlobalEvents = function() {
-    // Highlight the Bootstrap Panels by changing the color based on current focus
-    $(document).on('click focus', '.panel-default', function () {
-        $('.panel-primary').toggleClass('panel-primary panel-default');
-        $(this).toggleClass('panel-default panel-primary');
-    });
 };
 
 App.GetApplicationRelativeUrl = function (relativePath) {

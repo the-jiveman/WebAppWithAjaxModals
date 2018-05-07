@@ -5,8 +5,6 @@ namespace WebAppWithAjaxModals.Models
     public class Person
     {
         [Required]
-        [StringLength(50)]
-        [Display(Name = "First Name")]
         public int Id { get; set; }
 
         [Required]

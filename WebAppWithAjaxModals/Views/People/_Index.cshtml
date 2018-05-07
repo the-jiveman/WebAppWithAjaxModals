@@ -1,5 +1,11 @@
 ﻿@model IEnumerable<WebAppWithAjaxModals.Models.Person>
 
+<div class="form-group">
+    <button type="button" class="btn btn-primary btnAddPerson" data-modal-content-url="@Url.Action("Create", "People")">
+        <i class="fa fa-plus" aria-hidden="true"></i> Add Person
+    </button>
+</div>
+
 <table class="table table-striped" style="display: none;">
     <thead>
     <tr>
@@ -23,12 +29,12 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right">
                             <li>
-                                <button type="button" class="btn btn-link">
+                                <button type="button" class="btn btn-link btnEditPerson" data-modal-content-url="@Url.Action("Edit", "People", new { id = person.Id })">
                                     <i class="fa fa-pencil" aria-hidden="true"></i> Edit
                                 </button>
                             </li>
                             <li class="text-danger">
-                                <button type="button" class="btn btn-link">
+                                <button type="button" class="btn btn-link btnDeletePerson" data-modal-content-url="@Url.Action("Delete", "People", new { id = person.Id })">
                                     <i class="fa fa-trash" aria-hidden="true"></i> Delete
                                 </button>
                             </li>

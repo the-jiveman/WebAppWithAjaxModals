@@ -4,7 +4,7 @@ var App = App || {};
 
 App.Modal = function ($) {
 
-    var $modal = $('#genericModal');
+    var $modal = $('#modalForm');
     var $modalForm = $modal.find('form');
     var $modalBody = $modal.find('.modal-body');
     var $modalTitle = $modal.find('.modal-title');
@@ -45,12 +45,14 @@ App.Modal = function ($) {
             clearModalContent();
             setModalBody(htmlTemplates.loadingNotice);
         });
+
         $modal.on('hidden.bs.modal', function () {
             clearModalContent();
             if (settings.runCallbackOnModalClose && settings.modalCloseCallback) {
                 settings.modalCloseCallback();
             }
         });
+
         $modalForm.on('submit', function (e) {
             e.preventDefault();
             var $form = $(this);
@@ -85,9 +87,9 @@ App.Modal = function ($) {
         });
     }
 
-    function registerRemoteModalForm(triggerButton, title, modalTemplateName, submitUrl, postSubmitCallback) {
+    function registerRemoteModalForm(triggerButton, title, modalTemplateName, submitUrl, afterSubmitCallback) {
         $(document).on('click', triggerButton, function () {
-            resetModalCloseCallback(submitUrl, postSubmitCallback);
+            resetModalCloseCallback(submitUrl, afterSubmitCallback);
             showModal();
 
             var remoteContentUrl = $(this).data('modalContentUrl');

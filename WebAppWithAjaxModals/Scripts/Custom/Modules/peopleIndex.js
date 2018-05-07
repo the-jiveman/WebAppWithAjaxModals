@@ -6,22 +6,23 @@ var App = App || {};
 App.PeopleIndex = (function ($) {
 
     var init = function () {
-        loadPeople();
+        loadPeopleGrid();
         registerPersonEvents();
     };
 
     function registerPersonEvents() {
-        var personSaveUrl = App.GetApplicationRelativeUrl('People/Save');
-        App.Modal.RegisterRemoteModalForm('#btnAddPerson', 'Add New Person', App.Modal.Templates.saveForm, personSaveUrl, loadPeople);
+        var personSavePostUrl = App.GetApplicationRelativeUrl('People/Save');
+        App.Modal.RegisterRemoteModalForm('.btnAddPerson', 'Add Person', App.Modal.Templates.saveForm, personSavePostUrl, loadPeopleGrid);
+        App.Modal.RegisterRemoteModalForm('.btnEditPerson', 'Edit Person', App.Modal.Templates.saveForm, personSavePostUrl, loadPeopleGrid);
 
-        var personDeleteUrl = App.GetApplicationRelativeUrl('People/DeleteConfirm');
-        App.Modal.RegisterRemoteModalForm('.btnDeletePerson', 'Delete Person', App.Modal.Templates.deleteForm, personDeleteUrl, loadPeople);
+        var personDeletePostUrl = App.GetApplicationRelativeUrl('People/DeleteConfirm');
+        App.Modal.RegisterRemoteModalForm('.btnDeletePerson', 'Delete Person', App.Modal.Templates.deleteForm, personDeletePostUrl, loadPeopleGrid);
     }
 
-    function loadPeople() {
+    function loadPeopleGrid() {
         var peopleIndexUrl = App.GetApplicationRelativeUrl('People/AllPeople');
         App.LoadAjaxDataTable('#peopleTableWrapper', peopleIndexUrl, {
-            order: [[0, 'desc']]
+            order: [0, 'desc']
         });
     }
 
